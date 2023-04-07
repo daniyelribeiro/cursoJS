@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        body {
+            background-color: rgb(213, 241, 226);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: rgb(7, 0, 0);
+            font-size: 1.5em;
+            padding-top: 50px;
+            padding-left: 50px;
+        }
+        .cor {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Identificaçāo de nacionalidade</h1>
+    Voce nasceu: <input type="number" name="txtvel" id="txtvel"> km/h
+    <input type="button" value="Verificar" onclick="Calcular()">
+    <div id="resp"></div>
+    <script>
+        function Calcular() {
+            var txtvel = document.querySelector('#txtvel')
+            var resp = document.querySelector('#resp')
+            var vel = Number(txtvel.value)
+            resp.innerHTML = `<p>Sua velocidade atual é de <strong>${vel}</strong> km/h</p>`
+            if (vel > 60) {
+                resp.innerHTML += `<p>Sua velocidade é de ${vel} km/h. &nbsp Voce está <strong class="cor">multado</strong> por excesso de velocidade</p>`
+                resp.innerHTML += `<p>Sua velocidade é de ${vel} km/h. &nbsp Voce está <strong class="cor">multado</strong> por excesso de velocidade</p>`
+            }
+            else {
+                resp.innerHTML += `Parabens! Voce passou na velocidade permitida`
+            }
+            resp.innerHTML += `<p>Dirija com cuidado, use o cinto de segurança!</p>`
+        }
+    </script>
+</body>
+</html>
